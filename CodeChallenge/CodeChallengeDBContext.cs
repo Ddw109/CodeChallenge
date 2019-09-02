@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CodeChallenge.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CodeChallenge
 {
+
+
     public class CodeChallengeDBContext : DbContext
     {
-        public CodeChallengeDBContext(DbContextOptions<CodeChallengeDBContext> context):base(context)
+        public CodeChallengeDBContext(DbContextOptions<CodeChallengeDBContext> options)
+            : base(options)
         {
-
         }
-    }
 
-    //public DbSet<Workshop> Workshops { get; set; }
+        public DbSet<CodeChallengeDataset> CodeChallengeDS { get; set; }
+    }
 }
